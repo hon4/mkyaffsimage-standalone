@@ -33,6 +33,31 @@
 #include "yaffs_ecc.h"
 #include "yaffs_guts.h"
 
+#ifdef _WIN32
+
+#ifndef S_ISLNK
+#define S_ISLNK(m) 0
+#endif
+
+#ifndef S_ISSOCK
+#define S_ISSOCK(m) 0
+#endif
+
+static int lstat(const char *path, struct stat *st)
+{
+    return stat(path, st);
+}
+
+static int readlink(const char *path, char *buf, size_t bufsiz)
+{
+    (void)path;
+    (void)buf;
+    (void)bufsiz;
+    return -1;
+}
+
+#endif
+
 
 #define MAX_OBJECTS 10000
 
