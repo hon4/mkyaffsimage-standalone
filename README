@@ -1,0 +1,7 @@
+This project contains a standalone YAFFS1 image creation utility
+based on YAFFS code originally developed by Aleph One Ltd.
+
+YAFFS components are licensed under the GNU General Public License
+version 2 (GPLv2).
+
+The original copyright and license notices are retained.
